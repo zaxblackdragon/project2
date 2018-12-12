@@ -11,5 +11,17 @@
   "license": "ISC",
   "dependencies": {
     "eslint": "^4.19.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaxblackdragon/project2.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/zaxblackdragon/project2/issues"
+  },
+  "homepage": "https://github.com/zaxblackdragon/project2#readme"
 }
