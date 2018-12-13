@@ -12,6 +12,7 @@
   "dependencies": {
     "eslint": "^4.19.1",
     "express": "^4.16.4",
+<<<<<<< HEAD
     "express-session": "^1.15.6",
     "mysql": "^2.16.0",
     "passport": "^0.4.0",
@@ -29,4 +30,15 @@
     "url": "https://github.com/zaxblackdragon/project2/issues"
   },
   "homepage": "https://github.com/zaxblackdragon/project2#readme"
+=======
+    "express-sequelize": "0.0.4",
+    "express-session": "^1.15.6",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.42.0",
+    "twilio": "^3.25.0"
+  }
+>>>>>>> master
 }
