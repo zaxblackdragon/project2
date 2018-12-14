@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Homeward Found</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+
+<body class="w3-theme-l5">
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4">
+            <i class="fa fa-home w3-margin-right"></i>
+            Homeward Found Logo 
+        </a>
+        <br><br><br>
+        <!-- Submit info about lost/found pet -->
+        <div class="w3-dropdown-hover w3-hide-small">
+            <button class="w3-button w3-padding-large" title="Notifications"><span class="w3-large">Create Case</span></button>
+            <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+                <a href="index.html" class="w3-bar-item w3-button" style= "text-decoration: none">Lost/Found Dog</a>
+                <a href="casecat.html" class="w3-bar-item w3-button" style= "text-decoration: none">Lost/Found Cat</a>
+                <a href="caseotheranimals.html" class="w3-bar-item w3-button" style= "text-decoration: none">Lost/Found Other Animals</a>
+            </div>
+        </div>
+        <!-- Search info about lost/found pet -->
+        <div class="w3-dropdown-hover w3-hide-small">
+            <button class="w3-button w3-padding-large" title="Notifications"><span class="w3-large">Search Pet</span></button>
+            <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+                <a href="searchdog.html" class="w3-bar-item w3-button" style= "text-decoration: none">Dog</a>
+                <a href="searchcat.html" class="w3-bar-item w3-button" style= "text-decoration: none">Cat</a>
+                <a href="searchotheranimals.html" class="w3-bar-item w3-button" style= "text-decoration: none">Other Animals</a>
+            </div>
+        </div>
+        <!-- Found pet list -->
+        <div class="w3-dropdown-hover w3-hide-small">
+            <button class="w3-button w3-padding-large" title="Notifications"><span class="w3-large">Found Pet List</span></button>
+            <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+                <a href="founddoglist.html" class="w3-bar-item w3-button" style= "text-decoration: none">Found Dog List</a>
+                <a href="foundcatlist.html" class="w3-bar-item w3-button" style= "text-decoration: none">Found Cat List</a>
+                <a href="foundotheranimalslist.html" class="w3-bar-item w3-button" style= "text-decoration: none">Found Other Animals List</a>
+            </div>
+        </div>
+        <!-- Lost pet list -->
+        <div class="w3-dropdown-hover w3-hide-small">
+            <button class="w3-button w3-padding-large" title="Notifications"><span class="w3-large">Lost Pet List</span></button>
+            <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+                <a href="lostdoglist.html" class="w3-bar-item w3-button" style= "text-decoration: none">Lost Dog List</a>
+                <a href="lostcatlist.html" class="w3-bar-item w3-button" style= "text-decoration: none">Lost Cat List</a>
+                <a href="lostotheranimalslist.html" class="w3-bar-item w3-button" style= "text-decoration: none">Lost Other Animals List</a>
+            </div>
+        </div>
+        <!-- Shelter/Rescue list -->
+        <div class="w3-dropdown-hover w3-hide-small">
+            <button class="w3-button w3-padding-large" title="Notifications">
+                <span class="w3-large"><i class="fa fa-github"> </i>Shelter/Rescue list</span>
+                <!-- Name, contact, address, maps about shelters -->
+            </button>
+            <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+                <a href="searchshelter.html" class="w3-bar-item w3-button" style= "text-decoration: none">Find Shelter/Rescue</a>
+                <a href="searchvet.html" class="w3-bar-item w3-button" style= "text-decoration: none">Find VET</a>
+            </div>
+        </div>
+        <!-- Pet Care -->  
+        <div class="w3-dropdown-hover w3-hide-small">
+            <button class="w3-button w3-padding-large" title="Notifications"><span class="w3-large">Pet Care</span></button>
+            <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+                <a href="caredog.html" class="w3-bar-item w3-button" style= "text-decoration: none">Dog Basic Care</a>
+                <a href="carecat.html" class="w3-bar-item w3-button" style= "text-decoration: none">Cat Basic Care</a>
+                <a href="tips.html" class="w3-bar-item w3-button" style= "text-decoration: none">Tips</a>
+                <!-- We can make a source list what users need to do if they found/lost pet -->
+                <a href="userhelp.html" class="w3-bar-item w3-button" style= "text-decoration: none">Ways You Can Help</a>
+                <!-- Volunteering, Social working on Facebook, City Website, Nextdoor, free flyers... -->
+                <a href="donate.html" class="w3-bar-item w3-button" style= "text-decoration: none">Donate</a>
+            </div>
+        </div>
+        <!-- Saved Pets List -->
+        <a href="savedlist.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style= "text-decoration: none" title="Shelter/Rescue list">
+            Your Saved Pets List
+            <!-- Users can click on heart button to save a pet in case they want to check back info -->
+        </a>
+
+        <a href="login.html" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+            <img src="images/photo.jpeg" class="w3-circle" style="height:23px;width:23px" alt="Login/Signup">
+        </a>
+        </div>
+    </div>
+    <!-- End Navbar -->
+
+    <br><br><br><br><br><br>
+
+    <!-- Submit/Search Pet -->
+    <div class="container" >
+        <div class="jumbotron">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Dog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="foundcat.html">Cat</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="foundotheranimals.html">Other Pets</a>
+                </li>
+            </ul>
+            <br>
+            <h1 class="display-4">Help pets REUNITED!</h1>
+            <p class="lead">Lorem lorem lorem...</p>
+            <hr class="my-4">
+            <form>
+                <input class="form-control form-control-lg" type="text" id="location" placeholder="Location (best with detailed address)">
+                <br>
+                <input class="form-control form-control-lg" type="text" id="petname" placeholder="Pet name (N/A if you do not know his/her name)">
+                <br>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="mr-sm-2" for="status">Status</label>
+                        <select class="custom-select mr-sm-2" id="dogstatus">
+                            <option selected>Choose...</option>
+                            <option value="1">lost</option>
+                            <option value="2">found</option>
+                            <option value="3">running around</option>
+                        </select>
+                    </div> 
+                    <div class="col-sm-4">
+                        <label class="mr-sm-2" for="breed">Breed</label>
+                        <select class="custom-select mr-sm-2" id="dogbreed">
+                            <option selected>Choose...</option>
+                            <option value="1">do not know</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                            <option value="1">great pyreenes</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                            <option value="1">great pyreenes</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                            <option value="1">great pyreenes</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                            <option value="1">great pyreenes</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                            <option value="1">great pyreenes</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                            <option value="1">great pyreenes</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                            <option value="1">great pyreenes</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                            <option value="1">great pyreenes</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                            <option value="1">great pyreenes</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                            <option value="1">great pyreenes</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                            <option value="1">great pyreenes</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                            <option value="1">great pyreenes</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                            <option value="1">great pyreenes</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                            <option value="1">great pyreenes</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                            <option value="1">great pyreenes</option>
+                            <option value="2">chihuahua</option>
+                            <option value="3">golden retriever</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="mr-sm-2" for="sex">Sex</label>
+                        <select class="custom-select mr-sm-2" id="sex">
+                            <option selected>Choose...</option>
+                            <option value="1">do not know</option>
+                            <option value="2">male</option>
+                            <option value="3">female</option>
+                        </select>
+                    </div>                            
+                </div>
+                <br>
+                <div class="row">                   
+                    <div class="col-sm-4">
+                        <label class="mr-sm-2" for="age">Age</label>
+                        <select class="custom-select mr-sm-2" id="age">
+                            <option selected>Choose...</option>
+                            <option value="1">puppy (under 1 year old)</option>
+                            <option value="2">young (1-2 years old)</option>
+                            <option value="3">adult (2-10 years old)</option>
+                            <option value="4">senior (10 years old and more)</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="mr-sm-2" for="color">Color</label>
+                        <select class="custom-select mr-sm-2" id="color">
+                            <option selected>Choose...</option>
+                            <option value="1">white</option>
+                            <option value="2">black</option>
+                            <option value="3">chocolate</option>
+                        </select>
+                    </div> 
+                    <div class="col-sm-4">
+                        <label class="mr-sm-2" for="size">Size</label>
+                        <select class="custom-select mr-sm-2" id="size">
+                            <option selected>Choose...</option>
+                            <option value="1">small lest than 25 lbs</option>
+                            <option value="2">medium 26-60 lbs</option>
+                            <option value="3">large 61-100 lbs</option>
+                            <option value="4">X-large 101 lbs and more</option>
+                        </select>
+                    </div>  
+                </div>
+                <br>
+                <input class="form-control form-control-lg" type="text" id="petnote" placeholder="Special Discription">
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
