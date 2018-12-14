@@ -24,5 +24,15 @@
     "path": "^0.12.7",
     "sequelize": "^4.42.0",
     "twilio": "^3.25.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaxblackdragon/project2.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/zaxblackdragon/project2/issues"
+  },
+  "homepage": "https://github.com/zaxblackdragon/project2#readme"
 }

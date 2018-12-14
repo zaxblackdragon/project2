@@ -1,3 +1,6 @@
+# Working on the data base and sequelize today
+
+
 #### Pet Lost and Found
 
 ### Project2-Team3
