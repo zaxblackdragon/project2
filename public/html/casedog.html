@@ -101,43 +101,33 @@
     <div class="bg-image"></div>
 
     <div class="bg-text" style="margin-top: 150px">
+        
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link" href="searchdog.html">Dog</a>
+                <a class="nav-link active" href="casedog.html">Dog</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="searchcat.html">Cat</a>
+                <a class="nav-link" href="casecat.html">Cat</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="searchotheranimals.html">Other Pets</a>
+                <a class="nav-link" href="caseotheranimals.html">Other Pets</a>
             </li>
         </ul>
         <br>
-        <h1 class="display-4">Search lost/found other animals</h1>
-        <p class="lead">(^ . ^) Sorry! You CAN NOT search any case of OTHER ANIMALS right now. (^ . ^)</p>
+        <h1 class="display-4">Help lost dogs REUNITED!</h1>
+        <p class="lead">Submit a lost/found DOG case</p>
         <!-- <hr class="my-4"> -->
         <form>
             <input class="form-control form-control-lg" type="text" id="location" placeholder="Location (best with detailed address)">
             <br>
             <input class="form-control form-control-lg" type="text" id="petname" placeholder="Pet name (N/A if you do not know his/her name)">
             <br>
-            <div class="row">
-                <div class="col-sm-12">
-                    <select class="custom-select mr-sm-2" id="distance">
-                        <option selected>Time range...</option>
-                        <option value="1">in 1 week </option>
-                        <option value="2">in 2 weeks</option>
-                        <option value="3">in 1 month</option>
-                        <option value="4">in 2 months</option>
-                        <option value="5">all</option>
-                    </select>
-                </div>
-            </div>
+            <input class="form-control form-control-lg" type="text" id="photo" placeholder="Pet photo link">
             <br>
             <div class="row">
                 <div class="col-sm-4">
                     <label class="mr-sm-2" for="status">Status</label>
-                    <select class="custom-select mr-sm-2" id="status">
+                    <select class="custom-select mr-sm-2" id="dogstatus">
                         <option selected>Choose...</option>
                         <option value="1">lost</option>
                         <option value="2">found</option>
@@ -145,14 +135,21 @@
                     </select>
                 </div> 
                 <div class="col-sm-4">
-                    <label class="mr-sm-2" for="kind">Kind</label>
-                    <select class="custom-select mr-sm-2" id="kind">
+                    <label class="mr-sm-2" for="breed">Breed</label>
+                    <select class="custom-select mr-sm-2" id="dogbreed">
                         <option selected>Choose...</option>
-                        <option value="1">rabbit</option>
-                        <option value="2">bird</option>
-                        <option value="3">small animal</option>
-                        <option value="4">big animal</option>
-                        <option value="5">exotic animal</option>
+                        <option value="1">do not know</option>
+                        <option value="2">Anatolian Shepherd</option>
+                        <option value="3">Boston Terrier</option>
+                        <option value="4">Chihuahua</option>
+                        <option value="5">English Bulldog</option>
+                        <option value="6">Foxhound</option>
+                        <option value="7">Great Pyreenes</option>
+                        <option value="8">Husky</option>
+                        <option value="9">Labrador Retriever</option>
+                        <option value="10">Mastiff</option>
+                        <option value="11">Pit Bull Terrier</option>
+                        <option value="12">Shiba Inu</option>                       
                     </select>
                 </div>
                 <div class="col-sm-4">
@@ -163,28 +160,18 @@
                         <option value="2">male</option>
                         <option value="3">female</option>
                     </select>
-                </div>                       
+                </div>                            
             </div>
             <br>
-            <div class="row">       
+            <div class="row">                   
                 <div class="col-sm-4">
                     <label class="mr-sm-2" for="age">Age</label>
                     <select class="custom-select mr-sm-2" id="age">
                         <option selected>Choose...</option>
-                        <option value="1">baby (under 1 year old)</option>
+                        <option value="1">puppy (under 1 year old)</option>
                         <option value="2">young (1-2 years old)</option>
                         <option value="3">adult (2-10 years old)</option>
                         <option value="4">senior (10 years old and more)</option>
-                    </select>
-                </div>
-                <div class="col-sm-4">
-                    <label class="mr-sm-2" for="size">Size</label>
-                    <select class="custom-select mr-sm-2" id="size">
-                        <option selected>Choose...</option>
-                        <option value="1">small lest than 25 lbs</option>
-                        <option value="2">medium 26-60 lbs</option>
-                        <option value="3">large 61-100 lbs</option>
-                        <option value="4">X-large 101 lbs and more</option>
                     </select>
                 </div>
                 <div class="col-sm-4">
@@ -194,14 +181,28 @@
                         <option value="1">white</option>
                         <option value="2">black</option>
                         <option value="3">chocolate</option>
+                        <option value="4">Yellow</option>
                     </select>
-                </div>   
+                </div> 
+                <div class="col-sm-4">
+                    <label class="mr-sm-2" for="size">Size</label>
+                    <select class="custom-select mr-sm-2" id="size">
+                        <option selected>Choose...</option>
+                        <option value="1">small lest than 25 lbs</option>
+                        <option value="2">medium 26-60 lbs</option>
+                        <option value="3">large 61-100 lbs</option>
+                        <option value="4">X-large 101 lbs and more</option>
+                    </select>
+                </div>  
             </div>
             <br>
-            <button type="submit" class="btn btn-primary">Search</button>
+            <input class="form-control form-control-lg" type="text" id="petnote" placeholder="Special Discription">
+            <br>
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
         </form>
-        
+
     </div>
+
 
     <!-- Script for hiding navbar -->
     

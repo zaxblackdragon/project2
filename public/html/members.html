@@ -28,13 +28,13 @@
         <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
             <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
             <a href="members.html" class="w3-bar-item w3-button w3-padding-large w3-theme-d4" style= "text-decoration: none; font-size: 25px">
-                <img src="../images/logo.svg" style="height: 40px; width: 40px; margin-right: 10px" alt="Home">
+                <img src="../images/logo.svg" style="height: 40px; width: 40px; margin-right: 5px" alt="Home">
                 Homeward Found 
             </a>
             <!-- <br><br><br> -->
             <!-- Submit info about lost/found pet -->
             <div class="w3-dropdown-hover w3-hide-small">
-                <button class="w3-button w3-padding-large" title="Notifications" style= "font-size: 40px"><span class="w3-large">Create Case</span></button>
+                <button class="w3-button w3-padding-large" title="Notifications" style= "font-size: 40px"><span class="w3-large">Submit New Case</span></button>
                 <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
                     <a href="casedog.html" class="w3-bar-item w3-button" style= "text-decoration: none">Lost/Found Dog</a>
                     <a href="casecat.html" class="w3-bar-item w3-button" style= "text-decoration: none">Lost/Found Cat</a>
@@ -68,7 +68,7 @@
                     <a href="lostotheranimalslist.html" class="w3-bar-item w3-button" style= "text-decoration: none">Lost Other Animals List</a>
                 </div>
             </div>
-
+            
             <!-- Logout button -->
             <a href="login.html" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large" style= "text-decoration: none; font-size: 20px; margin-top: 7px" title="My Account">
                 <img src="../images/logout.svg" style="height: 30px; width: 30px" alt="Logout"> Logout
@@ -94,114 +94,22 @@
 
     <!-- End Navbar -->
 
-    <br><br><br>
+    <br><br>
 
-    <!-- Submit Pet -->
-
-    <div class="bg-image"></div>
-
-    <div class="bg-text" style="margin-top: 150px">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a class="nav-link" href="searchdog.html">Dog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="searchcat.html">Cat</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="searchotheranimals.html">Other Pets</a>
-            </li>
-        </ul>
-        <br>
-        <h1 class="display-4">Search lost/found other animals</h1>
-        <p class="lead">(^ . ^) Sorry! You CAN NOT search any case of OTHER ANIMALS right now. (^ . ^)</p>
-        <!-- <hr class="my-4"> -->
-        <form>
-            <input class="form-control form-control-lg" type="text" id="location" placeholder="Location (best with detailed address)">
-            <br>
-            <input class="form-control form-control-lg" type="text" id="petname" placeholder="Pet name (N/A if you do not know his/her name)">
-            <br>
-            <div class="row">
-                <div class="col-sm-12">
-                    <select class="custom-select mr-sm-2" id="distance">
-                        <option selected>Time range...</option>
-                        <option value="1">in 1 week </option>
-                        <option value="2">in 2 weeks</option>
-                        <option value="3">in 1 month</option>
-                        <option value="4">in 2 months</option>
-                        <option value="5">all</option>
-                    </select>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-sm-4">
-                    <label class="mr-sm-2" for="status">Status</label>
-                    <select class="custom-select mr-sm-2" id="status">
-                        <option selected>Choose...</option>
-                        <option value="1">lost</option>
-                        <option value="2">found</option>
-                        <option value="3">running around</option>
-                    </select>
-                </div> 
-                <div class="col-sm-4">
-                    <label class="mr-sm-2" for="kind">Kind</label>
-                    <select class="custom-select mr-sm-2" id="kind">
-                        <option selected>Choose...</option>
-                        <option value="1">rabbit</option>
-                        <option value="2">bird</option>
-                        <option value="3">small animal</option>
-                        <option value="4">big animal</option>
-                        <option value="5">exotic animal</option>
-                    </select>
-                </div>
-                <div class="col-sm-4">
-                    <label class="mr-sm-2" for="sex">Sex</label>
-                    <select class="custom-select mr-sm-2" id="sex">
-                        <option selected>Choose...</option>
-                        <option value="1">do not know</option>
-                        <option value="2">male</option>
-                        <option value="3">female</option>
-                    </select>
-                </div>                       
-            </div>
-            <br>
-            <div class="row">       
-                <div class="col-sm-4">
-                    <label class="mr-sm-2" for="age">Age</label>
-                    <select class="custom-select mr-sm-2" id="age">
-                        <option selected>Choose...</option>
-                        <option value="1">baby (under 1 year old)</option>
-                        <option value="2">young (1-2 years old)</option>
-                        <option value="3">adult (2-10 years old)</option>
-                        <option value="4">senior (10 years old and more)</option>
-                    </select>
-                </div>
-                <div class="col-sm-4">
-                    <label class="mr-sm-2" for="size">Size</label>
-                    <select class="custom-select mr-sm-2" id="size">
-                        <option selected>Choose...</option>
-                        <option value="1">small lest than 25 lbs</option>
-                        <option value="2">medium 26-60 lbs</option>
-                        <option value="3">large 61-100 lbs</option>
-                        <option value="4">X-large 101 lbs and more</option>
-                    </select>
-                </div>
-                <div class="col-sm-4">
-                    <label class="mr-sm-2" for="color">Color</label>
-                    <select class="custom-select mr-sm-2" id="color">
-                        <option selected>Choose...</option>
-                        <option value="1">white</option>
-                        <option value="2">black</option>
-                        <option value="3">chocolate</option>
-                    </select>
-                </div>   
-            </div>
-            <br>
-            <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-        
+    <!-- Login button -->
+    <div>
+        <img src="../images/dogswithhats.png" style="width: 100%" alt="Pets">
     </div>
+
+    <h1 class="display-4">Help lost pets REUNITED!</h1>
+
+    <!-- <hr class="my-4"> -->
+
+    <!-- <footer style= "background-color: white">
+        <br>
+        <p style = "text-align: center">Homeward Found &#169 2018</a></p>
+        <br>
+    </footer> -->
 
     <!-- Script for hiding navbar -->
     
