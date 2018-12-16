@@ -1,4 +1,13 @@
-# Working on the data base and sequelize today
+# Working with registering pets:
+
+## Add Pet
+registerPet.html => takes the user input
+
+registerPet.js => captures user input and stores it for the api
+
+apiRoutes.js => uses the pets.js in models to convert data types and send to the DB
+
+ 
 
 
 #### Pet Lost and Found
