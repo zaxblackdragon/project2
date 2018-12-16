@@ -1,6 +1,10 @@
 # Working with registering pets:
 
 ## Add Pet Notes:
+
+working on the post and getting an error startitng the server - var Pet = sequelize.define("pet", is not a function - will talk with a ta in the morning.
+
+
 registerPet.html => takes the user input
 
 registerPet.js => captures user input and stores it for the api

@@ -51,4 +51,34 @@ module.exports = function(app) {
     }
   });
 
+  // working on the post and getting an error startitng the server - var Pet = sequelize.define("pet", is not a function
+  app.post("/api/registerpet", function(req, res) {
+    // Take the request...
+    var pet = req.body;
+
+    // Create a routeName
+
+    // Using a RegEx Pattern to remove spaces from character.name
+    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+    var routeName = pet.name.replace(/\s+/g, "").toLowerCase();
+
+    // Then add the character to the database using sequelize
+    Pet.create({
+      routeName: routeName,
+      name: pet.name,
+      age: pet.age,
+      status: pet.status,
+      pet_type: pet.pet_type,
+      sex: pet.sex,
+      color: pet.color,
+      hair: pet.hair,
+      breed: pet.breed,
+      location: pet.location,
+      special: pet.special,
+      photolink: pet.photolink
+    });
+
+    res.status(204).end();
+  });
+
 };
