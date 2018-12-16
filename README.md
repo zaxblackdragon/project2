@@ -1,6 +1,6 @@
 # Working with registering pets:
 
-## Add Pet
+## Add Pet Notes:
 registerPet.html => takes the user input
 
 registerPet.js => captures user input and stores it for the api
@@ -10,7 +10,10 @@ apiRoutes.js => uses the pets.js in models to convert data types and send to the
  
 
 
-#### Pet Lost and Found
+
+
+
+
 
 ### Project2-Team3
 
