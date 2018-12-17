@@ -7,26 +7,49 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      return res.redirect("/members");
-    }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
-    
+    res.sendFile(path.join(__dirname, "../public/html/index.html"));
   });
 
   app.get("/login", function(req, res) {
-    // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/profile");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.sendFile(path.join(__dirname, "../public/html/login.html"));
+  });
+
+  app.get("/profile", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/profile.html"));
+  });
+
+  app.get("/founddoglist", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/founddoglist.html"));
+  });
+
+  app.get("/lostdoglist", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/lostdoglist.html"));
+  });
+
+  app.get("/registerPet", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/registerPet.html"));
+  });
+
+  app.get("/searchPet", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/searchPet.html"));
+  });
+
+  app.get("/signup", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/signup.html"));
+  });
+
+  app.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/");
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+  app.get("/profile", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/profile.html"));
   });
 
 };
