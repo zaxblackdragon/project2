@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   // Getting references to our form and input
   var signUpForm = $("form.signup");
@@ -34,7 +33,6 @@ $(document).ready(function() {
     if (!userData.email || !userData.password) {
       return;
     } else {
-      debugger;
       // If we have an email and password, run the signUpUser function
       signUpUser(userData.email, userData.password, userData.phoneNumber);
       emailInput.val("");
