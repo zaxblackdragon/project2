@@ -6,7 +6,7 @@ $(document).ready(function() {
   var phoneNumberInput = $("input#phoneNumber-input");
 
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
+    $("#alert.msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
   // Does a post to the signup route. If successful, we are redirected to the members page
