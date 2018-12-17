@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   // Getting references to our form and input
   var signUpForm = $("form.signup");
@@ -7,7 +6,7 @@ $(document).ready(function() {
   var phoneNumberInput = $("input#phoneNumber-input");
 
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
+    $("#alert.msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
   // Does a post to the signup route. If successful, we are redirected to the members page
@@ -34,7 +33,6 @@ $(document).ready(function() {
     if (!userData.email || !userData.password) {
       return;
     } else {
-      debugger;
       // If we have an email and password, run the signUpUser function
       signUpUser(userData.email, userData.password, userData.phoneNumber);
       emailInput.val("");

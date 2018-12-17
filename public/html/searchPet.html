@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Homeward Found</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- We link our html to the Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Walter+Turncoat">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/style.css" />
+
+</head>
+
+<body>
+
+    <div class="main-container">
+        
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <img src="../images/logo.svg" width="50" height="50" class="d-inline-block align-top" style="margin-right: 5px" alt="">
+                <a class="navbar-brand" href="/profile">
+                    HOMEWARD FOUND
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/registerPet">
+                                <img src="../images/footprint.svg" style="height: 30px; width: 30px" alt="Profile">New Case
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/searchPet">
+                                <img src="../images/footprint.svg" style="height: 30px; width: 30px" alt="Search Pet">Search Pet
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="../images/footprint.svg" style="height: 30px; width: 30px" alt="Found Pet">Found Pet List
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/founddoglist">Found Dog List</a>
+                                <a class="dropdown-item" href="/foundcatlist">Found Cat List</a>
+                                <a class="dropdown-item" href="/foundotheranimalslist">Found Other Animals List</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="../images/footprint.svg" style="height: 30px; width: 30px" alt="Lost Pet">Lost Pet List
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/lostdoglist">Lost Dog List</a>
+                                <a class="dropdown-item" href="/lostcatlist">Lost Cat List</a>
+                                <a class="dropdown-item" href="/lostotheranimalslist">Lost Other Animals List</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <a class="navbar-brand float-right" href="/profile">
+                        <img src="../images/profile.svg" style="height: 30px; width: 30px" alt="Profile"> my profile
+                    </a>
+
+                    <a class="navbar-brand float-right" href="/logout">
+                        <img src="../images/logout.svg" style="height: 30px; width: 30px" alt="Logout">logout
+                    </a>
+
+                </div>
+            </nav>             
+        </header>
+            
+        <div class="container content">
+            <br>
+            <h1 class="display-6">
+                Search Pet
+                <img src="../images/collar.svg" style="height: 60px; width: 60px" alt="Profile">
+            </h1>
+            <p class="lead">Help the pet you lost or found get reunited</p>
+            <hr style="border-top: 2px solid lightgray">
+            <br>
+            
+            <form>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="mr-sm-2" for="status"></label>
+                        <select class="custom-select mr-sm-2" id="register-status">
+                            <option selected>Lost, found or on the loose?</option>
+                            <option value="1">Lost</option>
+                            <option value="2">Found</option>
+                            <option value="3">On the loose</option>
+                        </select>
+                    </div> 
+                    <div class="col-sm-4">
+                        <label class="mr-sm-2" for="type"></label>
+                        <select class="custom-select mr-sm-2" id="register-type">
+                            <option selected>Pet Type?</option>
+                            <option value="1">dog</option>
+                            <option value="2">cat</option>
+                            <option value="3">other animals</option>
+                        </select>
+                    </div> 
+                    <div class="col-sm-4">
+                        <label class="mr-sm-2" for="sex"></label>
+                        <select class="custom-select mr-sm-2" id="register-sex">
+                            <option selected>Sex?</option>
+                            <option value="1">unknown male or female</option>
+                            <option value="2">male</option>
+                            <option value="3">female</option>
+                        </select>
+                    </div> 
+                </div>
+                <div class="row">                   
+                    <div class="col-sm-4">
+                        <label class="mr-sm-2" for="age"></label>
+                        <select class="custom-select mr-sm-2" id="register-age">
+                            <option selected>Age?</option>
+                            <option value="1">baby under 1 year old</option>
+                            <option value="2">young from 1-2 years old</option>
+                            <option value="3">adult from 2-10 years old</option>
+                            <option value="4">senior 10 years old and more</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="mr-sm-2" for="chip"></label>
+                        <select class="custom-select mr-sm-2" id="register-chip">
+                            <option selected>Microchip?</option>
+                            <option value="1">microchiped</option>
+                            <option value="2">no microchip</option>
+                        </select>
+                    </div> 
+                    <div class="col-sm-4">
+                        <label class="mr-sm-2" for="collar"></label>
+                        <select class="custom-select mr-sm-2" id="register-collartag">
+                            <option selected>Collar and Tag?</option>
+                            <option value="1">no collar</option>
+                            <option value="2">have collar no tag</option>
+                            <option value="2">have collar with tag</option>
+                        </select>
+                    </div> 
+                </div>
+                <div class="row">   
+                    <div class="col-sm-4">
+                        <label class="mr-sm-2" for="size"></label>
+                        <select class="custom-select mr-sm-2" id="register-size">
+                            <option selected>Size?</option>
+                            <option value="1">small lest than 25 lbs</option>
+                            <option value="2">medium 26-60 lbs</option>
+                            <option value="3">large 61-100 lbs</option>
+                            <option value="4">X-large 101 lbs and more</option>
+                        </select>
+                    </div> 
+                    <div class="col-sm-4">
+                        <label class="mr-sm-2" for="color"></label>
+                        <select class="custom-select mr-sm-2" id="register-color">
+                            <option selected>Color?</option>
+                            <option value="1">white</option>
+                            <option value="2">black</option>
+                            <option value="3">grey</option>
+                            <option value="4">golden</option>
+                            <option value="5">brown</option>
+                            <option value="6">chocolate</option>
+                            <option value="7">orange</option>
+                            <option value="8">red</option>
+                            <option value="9">calico</option>
+                            <option value="10">tabby</option>
+                        </select>
+                    </div>                  
+                    <div class="col-sm-4">
+                        <label class="mr-sm-2" for="hair"></label>
+                        <select class="custom-select mr-sm-2" id="register-hair">
+                            <option selected>Hair?</option>
+                            <option value="1">short</option>
+                            <option value="2">medium</option>
+                            <option value="3">long</option>
+                        </select>
+                    </div>                
+                </div>
+                <br>
+                <input class="form-control form-control-md" type="text" id="search-pet-name" placeholder="Pet name?">
+                <br>
+                <input class="form-control form-control-md" type="text" id="search-breed" placeholder="Breed? ( i.e. persian, greate dane, mix etc. )">
+                <br>
+                <select class="custom-select mr-sm-2" id="time-range">
+                    <option selected>Time range...</option>
+                    <option value="1">in 1 week </option>
+                    <option value="2">in 2 weeks</option>
+                    <option value="3">in 1 month</option>
+                    <option value="4">in 2 months</option>
+                    <option value="5">all</option>
+                </select>
+                <br><br>
+                <button type="submit" class="btn btn-primary" id="search-pet">SEARCH</button>
+            </form>
+            <br>
+        </div>          
+
+        <footer>
+            Homeward Found Copyright &#169<br><br>
+        </footer>  
+
+    </div>
+
+</body>
+
+</html>

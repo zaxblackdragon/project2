@@ -38,22 +38,30 @@
         <div class="container content">
             <br>
             <img src="../images/allpets.png" width="35%" class="d-inline-block align-top" alt="">
-            <h1 class="display-6">LOGIN FORM</h1>
+            <h1 class="display-6">Sign Up</h1>
             <hr style="border-top: 2px solid lightgray">
 
-            <form class="login">
+            <form class="signup">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="email-input" placeholder="Email">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="email-input" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="password-input" placeholder="Password">
+                <label for="exampleInputPassword1">Create Your Password</label>
+                <input type="password" class="form-control" id="password-input" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-default">Login</button>
+                <div class="form-group">
+                <label for="exampleInputPhoneNumber1">Phone Number</label>
+                <input type="tel" class="form-control" id="phoneNumber-input" placeholder="Phone Number">
+                </div>
+                <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span> <span class="msg"></span>
+                </div>
+                <button type="submit" class="btn btn-default">Sign Up</button>
             </form>
             <br>
-            <p>Or sign up <a href="/signup" style="font-size: 25px">here</a></p>
+            <p>Or login <a href="/login" style="font-size: 25px">here</a></p>
             <br>
         </div>          
 
@@ -62,8 +70,10 @@
         </footer>  
 
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/login.js"></script>
+  <script type="text/javascript" src="../js/signup.js"></script>
+
 </body>
 
 </html>
