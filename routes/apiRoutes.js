@@ -56,29 +56,27 @@ module.exports = function(app) {
     // Take the request...
     var pet = req.body;
 
-    // Create a routeName
-
-    // Using a RegEx Pattern to remove spaces from character.name
-    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-    var routeName = pet.name.replace(/\s+/g, "").toLowerCase();
-
-    // Then add the character to the database using sequelize
-    Pet.create({
-      routeName: routeName,
+    db.Pet.create({
+      //routeName: routeName,
       name: pet.name,
       age: pet.age,
       status: pet.status,
       pet_type: pet.pet_type,
       sex: pet.sex,
+      chip: pet.chip,
+      collartag: pet.collartag,
+      size: pet.size,
       color: pet.color,
       hair: pet.hair,
       breed: pet.breed,
       location: pet.location,
       special: pet.special,
       photolink: pet.photolink
+    }).then(function(){
+      res.status(204).end();
     });
 
-    res.status(204).end();
+
   });
 
 };
