@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -52,8 +53,21 @@ module.exports = function(app) {
     }
   });
 
+  app.get("/api/allpets", isAuthenticated, function (req, res) {
+    db.Pet.findAll({}).then(function(results){
+      res.json(results);
+    });
+  });
+  app.post("/api/search", isAuthenticated, function (req, res) {
+    db.Pet.findAll({
+      where: req.body   
+    }).then(function(results){
+      res.json(results);
+    });
+  });
   // working on the post and getting an error startitng the server - var Pet = sequelize.define("pet", is not a function
   app.post("/api/registerpet", function(req, res) {
+    console.log(req.body);
     // Take the request...
     var pet = req.body;
 
@@ -70,9 +84,11 @@ module.exports = function(app) {
       color: pet.color,
       hair: pet.hair,
       breed: pet.breed,
+      missingDays: pet.missingDays,
       location: pet.location,
       special: pet.special,
       photolink: pet.photolink
+      
     }).then(function(){
       res.status(204).end();
     });

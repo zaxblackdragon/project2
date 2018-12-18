@@ -94,114 +94,127 @@
             
             <form>
                 <div class="row">
+<!-- Status-->
                     <div class="col-sm-4">
                         <label class="mr-sm-2" for="status"></label>
                         <select class="custom-select mr-sm-2" id="register-status">
                             <option selected>Lost, found or on the loose?</option>
-                            <option value="1">Lost</option>
-                            <option value="2">Found</option>
-                            <option value="3">On the loose</option>
+                            <option value="Lost">Lost</option>
+                            <option value="Found">Found</option>
+                            <option value="On the loose">On the loose</option>
                         </select>
                     </div> 
+<!-- Pet Type -->
                     <div class="col-sm-4">
                         <label class="mr-sm-2" for="type"></label>
                         <select class="custom-select mr-sm-2" id="register-type">
                             <option selected>Pet Type?</option>
-                            <option value="1">dog</option>
-                            <option value="2">cat</option>
-                            <option value="3">other animals</option>
+                            <option value="Dog">Dog</option>
+                            <option value="Cat">Cat</option>
+                            <option value="Other animals">Other animals</option>
                         </select>
                     </div> 
+<!-- Sex -->
                     <div class="col-sm-4">
                         <label class="mr-sm-2" for="sex"></label>
                         <select class="custom-select mr-sm-2" id="register-sex">
                             <option selected>Sex?</option>
-                            <option value="1">unknown male or female</option>
-                            <option value="2">male</option>
-                            <option value="3">female</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Unknown">Unknown</option>
                         </select>
                     </div> 
                 </div>
+<!-- Age -->
                 <div class="row">                   
                     <div class="col-sm-4">
                         <label class="mr-sm-2" for="age"></label>
                         <select class="custom-select mr-sm-2" id="register-age">
                             <option selected>Age?</option>
-                            <option value="1">baby under 1 year old</option>
-                            <option value="2">young from 1-2 years old</option>
-                            <option value="3">adult from 2-10 years old</option>
-                            <option value="4">senior 10 years old and more</option>
+                            <option value="Puppy/Kitten: Under 1 year old">Puppy/Kitten: Under 1 year old</option>
+                            <option value="Young From 1-2 years old">Young: From 1-2 years old</option>
+                            <option value="Adult: From 2-10 years ">Adult: From 2-10 years old</option>
+                            <option value="4">Senior: 10 years old plus</option>
                         </select>
                     </div>
+<!-- Microchip -->
                     <div class="col-sm-4">
                         <label class="mr-sm-2" for="chip"></label>
                         <select class="custom-select mr-sm-2" id="register-chip">
                             <option selected>Microchip?</option>
-                            <option value="1">microchiped</option>
-                            <option value="2">no microchip</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
                         </select>
                     </div> 
+<!-- Collar/Tag -->
                     <div class="col-sm-4">
                         <label class="mr-sm-2" for="collar"></label>
                         <select class="custom-select mr-sm-2" id="register-collartag">
-                            <option selected>Collar and Tag?</option>
-                            <option value="1">no collar</option>
-                            <option value="2">have collar no tag</option>
-                            <option value="2">have collar with tag</option>
+                            <option selected>Collar and/or Tags?</option>
+                            <option value="No collar and no tags">No collar and no tags</option>
+                            <option value="Has collar but no tags">Has collar but no tags</option>
+                            <option value="Has collar with tags">Has collar with tags</option>
                         </select>
                     </div> 
                 </div>
                 <div class="row">   
+<!-- Size -->
                     <div class="col-sm-4">
                         <label class="mr-sm-2" for="size"></label>
                         <select class="custom-select mr-sm-2" id="register-size">
                             <option selected>Size?</option>
-                            <option value="1">small lest than 25 lbs</option>
-                            <option value="2">medium 26-60 lbs</option>
-                            <option value="3">large 61-100 lbs</option>
-                            <option value="4">X-large 101 lbs and more</option>
+                            <option value="Small: Less than 25 lbs">Small: Less than 25 lbs</option>
+                            <option value="Medium: 26-60 lbs">Medium: 26-60 lbs</option>
+                            <option value="Large: 61-100 lbs">Large: 61-100 lbs</option>
+                            <option value="X-large: 101 lbs plus">X-large: 101 lbs plus</option>
                         </select>
                     </div> 
+<!-- Color -->
                     <div class="col-sm-4">
                         <label class="mr-sm-2" for="color"></label>
                         <select class="custom-select mr-sm-2" id="register-color">
                             <option selected>Color?</option>
-                            <option value="1">white</option>
-                            <option value="2">black</option>
-                            <option value="3">grey</option>
-                            <option value="4">golden</option>
-                            <option value="5">brown</option>
-                            <option value="6">chocolate</option>
-                            <option value="7">orange</option>
-                            <option value="8">red</option>
-                            <option value="9">calico</option>
-                            <option value="10">tabby</option>
+                            <option value="White">White</option>
+                            <option value="Black">Black</option>
+                            <option value="Grey">Grey</option>
+                            <option value="Golden">Golden</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Chocolate">Chocolate</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Red">Red</option>
+                            <option value="Calico">Calico</option>
+                            <option value="Tabby">Tabby</option>
                         </select>
-                    </div>                  
+                    </div>     
+<!-- Hair          -->
                     <div class="col-sm-4">
                         <label class="mr-sm-2" for="hair"></label>
                         <select class="custom-select mr-sm-2" id="register-hair">
                             <option selected>Hair?</option>
-                            <option value="1">short</option>
-                            <option value="2">medium</option>
-                            <option value="3">long</option>
+                            <option value="Short">Short</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Long">Long</option>
                         </select>
                     </div>                
                 </div>
                 <br>
+<!-- Pet name -->
                 <input class="form-control form-control-md" type="text" id="search-pet-name" placeholder="Pet name?">
                 <br>
+<!-- Breed  -->
                 <input class="form-control form-control-md" type="text" id="search-breed" placeholder="Breed? ( i.e. persian, greate dane, mix etc. )">
                 <br>
+<!-- Missing for -->
                 <select class="custom-select mr-sm-2" id="time-range">
-                    <option selected>Time range...</option>
-                    <option value="1">in 1 week </option>
-                    <option value="2">in 2 weeks</option>
-                    <option value="3">in 1 month</option>
-                    <option value="4">in 2 months</option>
-                    <option value="5">all</option>
+                    <option selected>Missing for:</option>
+                    <option value="1 Day">1 Day</option>
+                    <option value="2 Days">2 Days</option>
+                    <option value="3 Days">3 Days</option>
+                    <option value="4-7 Days">4-7 Days</option>
+                    <option value="More than a week">More than a week</option>
                 </select>
                 <br><br>
+<!-- Submit -->
                 <button type="submit" class="btn btn-primary" id="search-pet">SEARCH</button>
             </form>
             <br>
@@ -212,7 +225,7 @@
         </footer>  
 
     </div>
-
+<script type="text/javascript" src="../js/search.js"></script>
 </body>
 
 </html>
