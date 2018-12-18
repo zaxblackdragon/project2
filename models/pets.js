@@ -15,26 +15,26 @@ module.exports = function(sequelize, DataTypes) {
   // the pet name is a string
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     // the pets age is a interger
     age: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
 
     status:  {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
 
     pet_type: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     sex: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     chip: {
       type: DataTypes.STRING,
@@ -50,19 +50,19 @@ module.exports = function(sequelize, DataTypes) {
     },
     color: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     hair: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     breed: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     missingDays: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     location: {
       type: DataTypes.STRING,
@@ -70,7 +70,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     special: {
       type: DataTypes.STRING(140),
-      allowNull: false,
+      allowNull: true,
     },
     photolink: {
       type: DataTypes.STRING,

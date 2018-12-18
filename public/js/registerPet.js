@@ -1,8 +1,9 @@
 
 
 $(document).ready(function() {
-    $("#submit-pet").on("click", function () {
-        debugger;
+    $("#submit-pet").on("click", function (e) {
+        e.preventDefault();
+        //debugger;
         function whenTheUserSubmitsANewPet() {
    
             var dataObj = {};
@@ -22,14 +23,14 @@ $(document).ready(function() {
             var location = $("#register-location").val().trim();
             var special  = $("#register-note").val().trim();
             var photolink  = $("#register-photo").val().trim();
-       debugger;
+       //debugger;
             if (name !== "") {
                 dataObj.name = name
             }
         
             if (age !== "Age?") {
                 dataObj.age = age
-            }
+            } 
         
             if (status !== "Lost, found or on the loose?") {
                 dataObj.status = status
@@ -37,6 +38,8 @@ $(document).ready(function() {
         
             if (pet_type !== "Pet Type?") {
                 dataObj.pet_type = pet_type
+            } else {
+                prompt("You must enter a pet type!");
             }
         
             if (sex !== "Sex?") {
@@ -84,7 +87,7 @@ $(document).ready(function() {
             }
             console.log(dataObj);
         
-            $.post("/api/search", dataObj, function(res){
+            $.post("/api/registerpet", dataObj, function(res){
                
             });
         }

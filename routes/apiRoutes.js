@@ -67,6 +67,7 @@ module.exports = function(app) {
   });
   // working on the post and getting an error startitng the server - var Pet = sequelize.define("pet", is not a function
   app.post("/api/registerpet", function(req, res) {
+    console.log(req.body);
     // Take the request...
     var pet = req.body;
 
@@ -86,6 +87,7 @@ module.exports = function(app) {
       location: pet.location,
       special: pet.special,
       photolink: pet.photolink
+      
     }).then(function(){
       res.status(204).end();
     });
