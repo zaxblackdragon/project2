@@ -13,10 +13,12 @@ $.get("", function(data){
 
         //now add all of our found dog data to the found section we placed on the page
 
+        //add the dog's image 
+        $("dog-found-" + i).attr("src", data[i].photolink);
         //make the found-dog-name a h5
         $("#dog-found-" + i).append("<h5>" + data[i].name + "</h5>");
         //make the dog information paragraph 
-        $("dog-found-" + i).append("<p>" + data[i].)
+        $("dog-found-" + i).append("<p>" + data[i].status + ", " + data[i].breed + ", " + data[i].sex + ", " + "</p>");
 
 
     }
