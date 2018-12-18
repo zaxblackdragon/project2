@@ -1,14 +1,19 @@
 
-// Creating our Pet model
+
+
+// Creating our User model
 module.exports = function(sequelize, DataTypes) {
 
 // Creates a "pet" model that matches up with DB
 
   var Pet = sequelize.define("Pet", {
   // the pet type gets saved as a string
-  // routeName: Sequelize.STRING,
+
+
+
+    // routeName: Sequelize.STRING,
   // the pet name is a string
-    pet_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -20,12 +25,12 @@ module.exports = function(sequelize, DataTypes) {
 
     status:  {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
 
-    pet_type: {
+    petType: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     sex: {
       type: DataTypes.STRING,
@@ -41,17 +46,21 @@ module.exports = function(sequelize, DataTypes) {
     },
     size: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     color: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     hair: {
       type: DataTypes.STRING,
       allowNull: true,
     },
     breed: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    missingDays: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -65,23 +74,14 @@ module.exports = function(sequelize, DataTypes) {
     },
     photolink: {
       type: DataTypes.STRING,
-      allowNull: false,
-    }
-  });
+      allowNull: true,
+    },
+  }, {
 
-  Pet.associate = function(models) {
-    // We're saying that a Pet should belong to a User
-    // A Pet can't be created without a User due to the foreign key constraint
-    Pet.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  });
 
   // Syncs with DB
   return Pet;
 };
-
-// Makes the Pet Model available for other files (will also create a table)
+// Makes the Character Model available for other files (will also create a table)
 // module.exports = Pet;

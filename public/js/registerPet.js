@@ -1,118 +1,123 @@
 $(document).ready(function() {
-    // Getting references to our form and input
-    // INSERT INTO Pets(pet_name, age, status, pet_type, sex, chip, collartag, size, color, hair, breed, location, special, photolink)
-    var registerPetForm = $("form.petregister");
-    var petnameInput = $("#register-pet-name");
-    var ageInput = $("#register-age");
-    var statusInput = $("#register-status");    
-    var pettypeInput = $("#register-pet-type");
-    var sexInput = $("#register-sex");
-    var chipInput = $("#register-chip");
-    var collartagInput = $("#register-collartag");
-    var sizeInput = $("#register-size");
-    var colorInput = $("#register-color");
-    var hairInput = $("#register-hair");
-    var breedInput = $("#register-breed");
-    var locationInput = $("#register-location");
-    var specialInput = $("#register-special");
-    var photolinkInput = $("#register-photolink");
-  
-    // Does a post to the register route. If successful, we are redirected to the members page
-    // Otherwise we log any errors
-    function registerPet(
-        petnameInput, 
-        ageInput, 
-        statusInput, 
-        pettypeInput, 
-        sexInput, 
-        chipInput, 
-        collartagInput, 
-        sizeInput, 
-        colorInput, 
-        hairInput, 
-        breedInput,
-        locationInput,
-        specialInput,
-        photolinkInput
-    ) {
-    $.post("/api/registerpet", { 
-        pet_name: petnameInput, 
-        age: ageInput, 
-        status: statusInput, 
-        pet_type: pettypeInput, 
-        sex: sexInput, 
-        chip: chipInput, 
-        collartag: collartagInput, 
-        size: sizeInput, 
-        color: colorInput, 
-        hair: hairInput, 
-        breed: breedInput,
-        location: locationInput,
-        special: specialInput,
-        photolink: photolinkInput
-        }).then(function(data) {
-        window.location.replace(data);
-        // If there's an error, handle it by throwing up a boostrap alert
-        }).catch(handleLoginErr);
+  $("#submit-pet").on("click", function (e) {
+    e.preventDefault();
+
+    function whenTheUserSubmitsANewPet() {
+
+      var dataObj = {};
+
+      var name = $("#search-pet-name").val().trim();
+      var age = $("#register-age").val().trim();
+      var status = $("#register-status").val().trim();
+      var petType = $("#register-type").val().trim();
+      var sex = $("#register-sex").val().trim();
+      var chip = $("#register-chip").val().trim();
+      var collartag = $("#register-collartag").val().trim();
+      var size = $("#register-size").val().trim();
+      var color = $("#register-color").val().trim();
+      var hair = $("#register-hair").val().trim();
+      var breed = $("#search-breed").val().trim();
+      var missingDays = $("#time-range").val().trim();
+      var location = $("#register-location").val().trim();
+      var special = $("#register-note").val().trim();
+      var photolink = $("#register-photo").val().trim();
+
+      if (name !== "") {
+        dataObj.name = name;
+      }
+
+      if (age !== "Age?") {
+        dataObj.age = age;
+      }
+
+      if (status !== "Lost, found or on the loose?") {
+        dataObj.status = status;
+      } else {
+        alert("You must enter lost or found!");
+        return;
+      }
+
+      if (petType !== "Pet Type?") {
+        dataObj.petType = petType;
+      } else {
+        alert("You must enter a pet type!");
+        return;
+      }
+
+      if (sex !== "Sex?") {
+        dataObj.sex = sex;
+      }
+
+      if (chip !== "Microchip?") {
+        dataObj.chip = chip;
+      }
+
+      if (collartag !== "Collar and/or Tags?") {
+        dataObj.collartag = collartag;
+      }
+
+      if (size !== "Size?") {
+        dataObj.size = size;
+      } else {
+        alert("You must enter a size!");
+        return;
+      }
+
+      if (color !== "Color?") {
+        dataObj.color = color;
+      } else {
+        alert("You must enter a color!");
+        return;
+      }
+
+      if (hair !== "Hair?") {
+        dataObj.hair = hair;
+      }
+
+      if (breed !== "") {
+        dataObj.breed = breed;
+      }
+
+      if (missingDays !== "Missing for:") {
+        dataObj.missingDays = missingDays;
+      }
+
+      if (location !== "") {
+        dataObj.location = location;
+      }
+
+      if (special !== "") {
+        dataObj.special = special;
+      }
+
+      if (photolink !== "") {
+        dataObj.photolink = photolink;
+      } else {
+        alert("You must enter a photo link!");
+        return;
+      }
+
+
+      $.post("/api/registerpet", dataObj, function(res){
+        $("#search-pet-name").val("");
+        $("#register-age").val("Age?");
+        $("#register-status").val("Lost, found or on the loose?");
+        $("#register-type").val("Pet Type?");
+        $("#register-sex").val("Sex?");
+        $("#register-chip").val("Microchip?");
+        $("#register-collartag").val("Collar and/or Tags?");
+        $("#register-size").val("Size?");
+        $("#register-color").val("Color?");
+        $("#register-hair").val("Hair?");
+        $("#search-breed").val("");
+        $("#time-range").val("Missing for:");
+        $("#register-location").val("");
+        $("#register-note").val("");
+        $("#register-photo").val("");
+      });
     }
-    // When the submit button is clicked, we validate all selected options and inputs are not blank.
-    // We will change code later to give NULL if any black exists.
+    whenTheUserSubmitsANewPet();
+    alert("You sent a pet!");
 
-    registerPetForm.on("submit", function(event) {
-        event.preventDefault();
-        var petData = {
-            pet_name: petnameInput.val().trim(), 
-            age: ageInput.val().trim(), 
-            status: statusInput.val().trim(), 
-            pet_type: pettypeInput.val().trim(), 
-            sex: sexInput.val().trim(), 
-            chip: chipInput.val().trim(), 
-            collartag: collartagInput.val().trim(), 
-            size: sizeInput.val().trim(), 
-            color: colorInput.val().trim(), 
-            hair: hairInput.val().trim(), 
-            breed: breedInput.val().trim(),
-            location: locationInput.val().trim(),
-            special: specialInput.val().trim(),
-            photolink: photolinkInput.val().trim()
-        };
-        console.log(petData);
-        if (!petData.status || !petData.pet_type || !petData.size || !petData.color || !petData.photolink) {
-            alert("Status, pet type, size, color, and photolink must be filled");
-            return;
-        } else {
-            // run the registerPet function
-            registerPet(
-                petData.pet_name, 
-                petData.pet_age,
-                petData.status,  
-                petData.pet_type,  
-                petData.sex,  
-                petData.chip, 
-                petData.collartag,  
-                petData.size,  
-                petData.color,  
-                petData.hair,  
-                petData.breed,  
-                petData.location,  
-                petData.special,  
-                petData.photolink);
-            petnameInput.val("");
-            ageInput.val("");
-            statusInput.val("");
-            pettypeInput.val("");
-            sexInput.val("");
-            chipInput.val("");
-            collartagInput.val("");
-            sizeInput.val("");
-            colorInput.val("");
-            breedInput.val("");
-            locationInput.val("");
-            specialInput.val("");
-            photolinkInput.val("");
-
-        }
-    });
-  
+  });
 });
-  
