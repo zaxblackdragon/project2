@@ -37,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
     },
     chip: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     collartag: {
@@ -57,6 +57,10 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
     },
     breed: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    missingDays: {
       type: DataTypes.STRING,
       allowNull: false,
     },
