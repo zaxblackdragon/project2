@@ -17,10 +17,6 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/html/login.html"));
   });
 
-  app.get("/profile", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/html/profile.html"));
-  });
-
   app.get("/founddoglist", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/founddoglist.html"));
   });
@@ -50,6 +46,19 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/profile", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/profile.html"));
+<<<<<<< HEAD
+=======
+  });
+
+  app.get("/profile", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/profile.html"));
+  });
+
+  app.get("/members", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/members.html"));
+>>>>>>> c64d5d6cb8ca59f46ffe388803373bd38b8c71f9
   });
 
 };
+
+

@@ -19,6 +19,7 @@ module.exports = function(app) {
   app.post("/api/signup", function(req, res) {
     console.log(req.body);
     db.User.create({
+      name: req.body.name,
       email: req.body.email,
       password: req.body.password,
       phoneNumber: req.body.phoneNumber
@@ -46,20 +47,22 @@ module.exports = function(app) {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
+        name: req.user.name,
         email: req.user.email,
+        phoneNumber: req.user.phoneNumber,
         id: req.user.id
       });
     }
   });
 
-  // working on the post and getting an error startitng the server - var Pet = sequelize.define("pet", is not a function
-  app.post("/api/registerpet", function(req, res) {
+  app.post("/api/pet_data", function(req, res) {
     // Take the request...
     var pet = req.body;
+    console.log(pet);
 
     db.Pet.create({
       //routeName: routeName,
-      name: pet.name,
+      pet_name: pet.pet_name,
       age: pet.age,
       status: pet.status,
       pet_type: pet.pet_type,
@@ -75,9 +78,10 @@ module.exports = function(app) {
       photolink: pet.photolink
     }).then(function(){
       res.status(204).end();
+      res.redirect('/members');
     });
-
-
   });
+
+
 
 };

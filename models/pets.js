@@ -1,25 +1,20 @@
 
-
-
-// Creating our User model
+// Creating our Pet model
 module.exports = function(sequelize, DataTypes) {
 
 // Creates a "pet" model that matches up with DB
 
   var Pet = sequelize.define("Pet", {
   // the pet type gets saved as a string
-
-
-
-    // routeName: Sequelize.STRING,
+  // routeName: Sequelize.STRING,
   // the pet name is a string
-    name: {
+    pet_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     // the pets age is a interger
     age: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
 
@@ -37,11 +32,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
     },
     chip: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
     collartag: {
-      type: DataTypes.STRING,
       allowNull: true,
     },
     size: {
@@ -79,5 +70,6 @@ module.exports = function(sequelize, DataTypes) {
   // Syncs with DB
   return Pet;
 };
-// Makes the Character Model available for other files (will also create a table)
+
+// Makes the Pet Model available for other files (will also create a table)
 // module.exports = Pet;
