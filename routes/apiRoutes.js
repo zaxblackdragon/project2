@@ -10,7 +10,7 @@ module.exports = function(app) {
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
-    res.json("/members");
+    res.json("/profile");
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -19,8 +19,10 @@ module.exports = function(app) {
   app.post("/api/signup", function(req, res) {
     console.log(req.body);
     db.User.create({
+      name: req.body.name,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      phoneNumber: req.body.phoneNumber
     }).then(function() {
       res.redirect(307, "/api/login");
     }).catch(function(err) {
@@ -45,10 +47,41 @@ module.exports = function(app) {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
+        name: req.user.name,
         email: req.user.email,
+        phoneNumber: req.user.phoneNumber,
         id: req.user.id
       });
     }
   });
+
+  app.post("/api/pet_data", function(req, res) {
+    // Take the request...
+    var pet = req.body;
+    console.log(pet);
+
+    db.Pet.create({
+      //routeName: routeName,
+      pet_name: pet.pet_name,
+      age: pet.age,
+      status: pet.status,
+      pet_type: pet.pet_type,
+      sex: pet.sex,
+      chip: pet.chip,
+      collartag: pet.collartag,
+      size: pet.size,
+      color: pet.color,
+      hair: pet.hair,
+      breed: pet.breed,
+      location: pet.location,
+      special: pet.special,
+      photolink: pet.photolink
+    }).then(function(){
+      res.status(204).end();
+      res.redirect('/members');
+    });
+  });
+
+  
 
 };

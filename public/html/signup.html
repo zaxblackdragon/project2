@@ -29,7 +29,7 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <img src="../images/logo.svg" width="50" height="50" class="d-inline-block align-top" style="margin-right: 5px" alt="">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="/">
                     HOMEWARD FOUND
                 </a>
             </nav>             
@@ -42,6 +42,10 @@
             <hr style="border-top: 2px solid lightgray">
 
             <form class="signup">
+                <div class="form-group">
+                <label for="exampleInputName1">Sign up name</label>
+                <input type="text" class="form-control" id="name-input" placeholder="Name">
+                </div>
                 <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" class="form-control" id="email-input" placeholder="Email">
@@ -61,7 +65,7 @@
                 <button type="submit" class="btn btn-default">Sign Up</button>
             </form>
             <br>
-            <p>Or sign up <a href="login.html" style="font-size: 25px">here</a></p>
+            <p>Or login <a href="/login" style="font-size: 25px">here</a></p>
             <br>
         </div>          
 
@@ -70,6 +74,9 @@
         </footer>  
 
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/signup.js"></script>
 
 </body>
 
