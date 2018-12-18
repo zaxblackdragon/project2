@@ -25,11 +25,18 @@
     "sequelize": "^4.42.0",
     "twilio": "^3.25.0"
   },
+<<<<<<< HEAD
+=======
+  "devDependencies": {},
+>>>>>>> d0b707c6c025f530634ffa5d61021b2991ad7c5e
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zaxblackdragon/project2.git"
   },
+<<<<<<< HEAD
   "keywords": [],
+=======
+>>>>>>> d0b707c6c025f530634ffa5d61021b2991ad7c5e
   "author": "",
   "bugs": {
     "url": "https://github.com/zaxblackdragon/project2/issues"
