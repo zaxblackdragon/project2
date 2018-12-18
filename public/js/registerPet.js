@@ -3,7 +3,7 @@
 $(document).ready(function() {
     $("#submit-pet").on("click", function (e) {
         e.preventDefault();
-        //debugger;
+       
         function whenTheUserSubmitsANewPet() {
    
             var dataObj = {};
@@ -98,10 +98,24 @@ $(document).ready(function() {
                 alert("You must enter a photo link!");
                 return;
             }
-            console.log(dataObj);
+          
         
             $.post("/api/registerpet", dataObj, function(res){
-               
+                 $("#search-pet-name").val("");
+                 $("#register-age").val("Age?");
+                 $("#register-status").val("Lost, found or on the loose?");
+                 $("#register-type").val("Pet Type?");
+                 $("#register-sex").val("Sex?");
+                 $("#register-chip").val("Microchip?");
+                 $("#register-collartag").val("Collar and/or Tags?");
+                 $("#register-size").val("Size?");
+                 $("#register-color").val("Color?");
+                 $("#register-hair").val("Hair?");
+                 $("#search-breed").val("");
+                 $("#time-range").val("Missing for:");
+                 $("#register-location").val("");
+                 $("#register-note").val("");
+                 $("#register-photo").val("");
             });
         }
         whenTheUserSubmitsANewPet();
