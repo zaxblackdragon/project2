@@ -23,7 +23,7 @@ $(document).ready(function() {
             var location = $("#register-location").val().trim();
             var special  = $("#register-note").val().trim();
             var photolink  = $("#register-photo").val().trim();
-       //debugger;
+       
             if (name !== "") {
                 dataObj.name = name
             }
@@ -34,12 +34,16 @@ $(document).ready(function() {
         
             if (status !== "Lost, found or on the loose?") {
                 dataObj.status = status
+            } else {
+                alert("You must enter lost or found!");
+                return;
             }
         
             if (pet_type !== "Pet Type?") {
                 dataObj.pet_type = pet_type
             } else {
-                prompt("You must enter a pet type!");
+               alert("You must enter a pet type!");
+               return;
             }
         
             if (sex !== "Sex?") {
@@ -60,6 +64,9 @@ $(document).ready(function() {
             
             if (color !== "Color?") {
                 dataObj.color = color
+            } else {
+                alert("You must enter a color!");
+                return;
             }
         
             if (hair !== "Hair?") {
@@ -84,6 +91,9 @@ $(document).ready(function() {
 
             if (photolink !== "") {
                 dataObj.photolink = photolink
+            } else {
+                alert("You must enter a photo link!");
+                return;
             }
             console.log(dataObj);
         

@@ -84,6 +84,7 @@ module.exports = function(app) {
       color: pet.color,
       hair: pet.hair,
       breed: pet.breed,
+      missingDays: pet.missingDays,
       location: pet.location,
       special: pet.special,
       photolink: pet.photolink
