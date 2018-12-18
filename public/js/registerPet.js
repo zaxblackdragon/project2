@@ -60,7 +60,10 @@ $(document).ready(function() {
         
             if (size !== "Size?") {
                 dataObj.size = size
-            }  
+            }  else {
+                alert("You must enter a size!");
+                return;
+            }
             
             if (color !== "Color?") {
                 dataObj.color = color
