@@ -98,7 +98,7 @@ $(document).ready(function() {
       }
 
 
-      $.post("/api/registerpet", dataObj, function(res){
+      $.post("api/registerpet", dataObj, function(res){
         $("#search-pet-name").val("");
         $("#register-age").val("Age?");
         $("#register-status").val("Lost, found or on the loose?");
