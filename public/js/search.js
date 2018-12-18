@@ -1,11 +1,11 @@
 $("#search-pet").on("click", function() {
-  
 
 
-function whenTheUserSubmitsASearch() {
-   
+
+  function whenTheUserSubmitsASearch() {
+
     var dataObj = {};
-    
+
     var name = $("#search-pet-name").val().trim();
     var age = $("#register-age").val().trim();
     var status = $("#register-status").val().trim();
@@ -20,55 +20,55 @@ function whenTheUserSubmitsASearch() {
     var missingDays = $("#time-range").val().trim();
 
     if (name !== "") {
-        dataObj.name = name
+      dataObj.name = name;
     }
 
     if (age !== "Age?") {
-        dataObj.age = age
+      dataObj.age = age;
     }
 
     if (status !== "Lost, found or on the loose?") {
-        dataObj.status = status
+      dataObj.status = status;
     }
 
     if (pet_type !== "Pet Type?") {
-        dataObj.pet_type = pet_type
+      dataObj.pet_type = pet_type;
     }
 
     if (sex !== "Sex?") {
-        dataObj.sex = sex
+      dataObj.sex = sex;
     }
 
     if (chip !== "Microchip?") {
-        dataObj.chip = chip
-    }  
+      dataObj.chip = chip;
+    }
 
     if (collartag !== "Collar and/or Tags?") {
-        dataObj.collartag = collartag
+      dataObj.collartag = collartag;
     }
 
     if (size !== "Size?") {
-        dataObj.size = size
-    }  
-    
+      dataObj.size = size;
+    }
+
     if (color !== "Color?") {
-        dataObj.color = color
+      dataObj.color = color;
     }
 
     if (hair !== "Hair?") {
-        dataObj.hair = hair
-    }  
-    
+      dataObj.hair = hair;
+    }
+
     if (breed !== "") {
-        dataObj.breed = breed
-    } 
+      dataObj.breed = breed;
+    }
     if (missingDays !== "Missing for:") {
-        dataObj.missingDays = missingDays
-    } 
+      dataObj.missingDays = missingDays;
+    }
 
     $.post("/api/search", dataObj, function(res){
-        console.log("We did it");
+      console.log("We did it");
     });
-}
-whenTheUserSubmitsASearch();
+  }
+  whenTheUserSubmitsASearch();
 });

@@ -60,13 +60,13 @@ module.exports = function(app) {
   });
   app.post("/api/search", isAuthenticated, function (req, res) {
     db.Pet.findAll({
-      where: req.body   
+      where: req.body
     }).then(function(results){
       res.json(results);
     });
   });
   // working on the post and getting an error startitng the server - var Pet = sequelize.define("pet", is not a function
-  app.post("/api/registerpet", function(req, res) {
+  app.post("/api/registerpet", isAuthenticated, function(req, res) {
     console.log(req.body);
     // Take the request...
     var pet = req.body;
@@ -76,7 +76,7 @@ module.exports = function(app) {
       name: pet.name,
       age: pet.age,
       status: pet.status,
-      pet_type: pet.pet_type,
+      petType: pet.petType,
       sex: pet.sex,
       chip: pet.chip,
       collartag: pet.collartag,
@@ -88,7 +88,7 @@ module.exports = function(app) {
       location: pet.location,
       special: pet.special,
       photolink: pet.photolink
-      
+
     }).then(function(){
       res.status(204).end();
     });

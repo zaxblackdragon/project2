@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
     },
 
-    pet_type: {
+    petType: {
       type: DataTypes.STRING,
       allowNull: true,
     },
