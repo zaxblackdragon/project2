@@ -55,7 +55,8 @@ module.exports = function(app) {
     }
   });
 
-  app.post("/api/pet_data", function(req, res) {
+  // Route for register a pet
+  app.post("/api/registerpet", function(req, res) {
     // Take the request...
     var pet = req.body;
     console.log(pet);
@@ -76,12 +77,30 @@ module.exports = function(app) {
       location: pet.location,
       special: pet.special,
       photolink: pet.photolink
-    }).then(function(){
-      res.status(204).end();
-      res.redirect('/members');
+    }).then(function() {
+      res.redirect(307, "/api/login");
+    }).catch(function(err) {
+      console.log(err);
+      res.json(err);
+      // res.status(422).json(err.errors[0].message);
     });
   });
 
-  
+  // // Route for getting pet data
+  // app.get("/api/pet", function(req, res) {
+  //   if (!req.user) {
+  //     // The user is not logged in, send back an empty object
+  //     res.json({});
+  //   } else {
+  //     // Otherwise send back the user's email and id
+  //     // Sending back a password, even a hashed password, isn't a good idea
+  //     res.json({
+  //       name: req.user.name,
+  //       email: req.user.email,
+  //       phoneNumber: req.user.phoneNumber,
+  //       id: req.user.id
+  //     });
+  //   }
+  // });
 
 };

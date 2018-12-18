@@ -1,8 +1,8 @@
 $(document).ready(function() {
     // Getting references to our form and input
     // INSERT INTO Pets(pet_name, age, status, pet_type, sex, chip, collartag, size, color, hair, breed, location, special, photolink)
-    var registerPetForm = $("form.signup");
-    var petnameInput = $("input#register-pet-name");
+    var registerPetForm = $("form.petregister");
+    var petnameInput = $("#register-pet-name");
     var ageInput = $("#register-age");
     var statusInput = $("#register-status");    
     var pettypeInput = $("#register-pet-type");
@@ -12,15 +12,11 @@ $(document).ready(function() {
     var sizeInput = $("#register-size");
     var colorInput = $("#register-color");
     var hairInput = $("#register-hair");
-    var breedInput = $("input#register-breed");
-    var locationInput = $("input#register-location");
-    var specialInput = $("input#register-special");
-    var photolinkInput = $("input#register-photolink");
+    var breedInput = $("#register-breed");
+    var locationInput = $("#register-location");
+    var specialInput = $("#register-special");
+    var photolinkInput = $("#register-photolink");
   
-    function handleLoginErr(err) {
-      $("#alert.msg").text(err.responseJSON);
-      $("#alert").fadeIn(500);
-    }
     // Does a post to the register route. If successful, we are redirected to the members page
     // Otherwise we log any errors
     function registerPet(
@@ -81,23 +77,11 @@ $(document).ready(function() {
             photolink: photolinkInput.val().trim()
         };
         console.log(petData);
-        if (!petData.pet_name || 
-            !petData.age || 
-            !petData.status || 
-            !petData.pet_type || 
-            !petData.sex || 
-            !petData.chip || 
-            !petData.collartag || 
-            !petData.size || 
-            !petData.color || 
-            !petData.hair || 
-            !petData.breed || 
-            !petData.location || 
-            !petData.special || 
-            !petData.photolink) {
+        if (!petData.status || !petData.pet_type || !petData.size || !petData.color || !petData.photolink) {
+            alert("Status, pet type, size, color, and photolink must be filled");
             return;
         } else {
-            // If we have an email and password, run the signUpUser function
+            // run the registerPet function
             registerPet(
                 petData.pet_name, 
                 petData.pet_age,
