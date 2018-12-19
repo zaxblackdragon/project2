@@ -55,18 +55,30 @@ module.exports = function(app) {
     }
   });
 
-  // Route for register a pet
+  app.get("/api/allpets", function (req, res) {
+    db.Pet.findAll({}).then(function(results){
+      res.json(results);
+    });
+  });
+  app.post("/api/search", function (req, res) {
+    db.Pet.findAll({
+      where: req.body
+    }).then(function(results){
+      res.json(results);
+    });
+  });
+  // working on the post and getting an error startitng the server - var Pet = sequelize.define("pet", is not a function
   app.post("/api/registerpet", function(req, res) {
+    console.log(req.body);
     // Take the request...
     var pet = req.body;
-    console.log(pet);
 
     db.Pet.create({
       //routeName: routeName,
-      pet_name: pet.pet_name,
+      name: pet.name,
       age: pet.age,
       status: pet.status,
-      pet_type: pet.pet_type,
+      petType: pet.petType,
       sex: pet.sex,
       chip: pet.chip,
       collartag: pet.collartag,
@@ -74,33 +86,14 @@ module.exports = function(app) {
       color: pet.color,
       hair: pet.hair,
       breed: pet.breed,
+      missingDays: pet.missingDays,
       location: pet.location,
       special: pet.special,
       photolink: pet.photolink
-    }).then(function() {
-      res.redirect(307, "/api/login");
-    }).catch(function(err) {
-      console.log(err);
-      res.json(err);
-      // res.status(422).json(err.errors[0].message);
+
+    }).then(function(){
+      res.status(204).end();
     });
   });
-
-  // // Route for getting pet data
-  // app.get("/api/pet", function(req, res) {
-  //   if (!req.user) {
-  //     // The user is not logged in, send back an empty object
-  //     res.json({});
-  //   } else {
-  //     // Otherwise send back the user's email and id
-  //     // Sending back a password, even a hashed password, isn't a good idea
-  //     res.json({
-  //       name: req.user.name,
-  //       email: req.user.email,
-  //       phoneNumber: req.user.phoneNumber,
-  //       id: req.user.id
-  //     });
-  //   }
-  // });
 
 };

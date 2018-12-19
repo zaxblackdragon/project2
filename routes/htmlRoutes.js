@@ -21,8 +21,24 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/html/founddoglist.html"));
   });
 
+  app.get("/foundcatlist", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/foundcatlist.html"));
+  });
+
+  app.get("/foundotherpetslist", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/foundotherpetslist.html"));
+  });
+
   app.get("/lostdoglist", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/lostdoglist.html"));
+  });
+
+  app.get("/lostcatlist", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/lostcatlist.html"));
+  });
+
+  app.get("/lostotherpetslist", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/lostotherpetslist.html"));
   });
 
   app.get("/registerPet", function(req, res) {
