@@ -33,15 +33,15 @@ $(document).ready(function() {
       if (status !== "Lost, found or on the loose?") {
         dataObj.status = status;
       } else {
-        // alert("You must enter lost or found!");
-        // return;
+        alert("You must enter lost or found!");
+        return;
       }
 
       if (petType !== "Pet Type?") {
         dataObj.petType = petType;
       } else {
-        // alert("You must enter a pet type!");
-        // return;
+        alert("You must enter a pet type!");
+        return;
       }
 
       if (sex !== "Sex?") {
@@ -59,15 +59,15 @@ $(document).ready(function() {
       if (size !== "Size?") {
         dataObj.size = size;
       } else {
-        // alert("You must enter a size!");
-        // return;
+        alert("You must enter a size!");
+        return;
       }
 
       if (color !== "Color?") {
         dataObj.color = color;
       } else {
-        // alert("You must enter a color!");
-        // return;
+        alert("You must enter a color!");
+        return;
       }
 
       if (hair !== "Hair?") {
@@ -93,11 +93,10 @@ $(document).ready(function() {
       if (photolink !== "") {
         dataObj.photolink = photolink;
       } else {
-        // alert("You must enter a photo link!");
-        // return;
+        alert("You must enter a photo link!");
+        return;
       }
-// debugger;
-// console.log(dataObj);
+
       $.post("/api/registerpet", dataObj, function(res){
         $("#search-pet-name").val("");
         $("#register-age").val("Age?");

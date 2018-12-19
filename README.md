@@ -1,6 +1,14 @@
-# Working with registering pets:
 
-## Add Pet Notes:
+
+## Notes:
+
+-User can go to the login page and either sign in or create a new account (index.html -> route localhost:8080/).
+
+-From the they go to their profile (profile.html -> route localhost:8080/profile)
+
+-From the profile page they can search by pet type or add a new pet.
+
+It is all functioning through the routes useing the files in the layout branch.
 
 working on the post and getting an error startitng the server - var Pet = sequelize.define("pet", is not a function - will talk with a ta in the morning.
 

@@ -78,7 +78,6 @@ module.exports = function(app) {
       }
     }).then(function(results){
       res.json(results);
-      console.log(results);
     });
   });
   // gets other animals only
@@ -89,7 +88,6 @@ module.exports = function(app) {
       }
     }).then(function(results){
       res.json(results);
-      console.log(results);
     });
   });
   //search route
