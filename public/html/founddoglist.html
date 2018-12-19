@@ -10,7 +10,10 @@
 
     <!-- We link our html to the Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     
@@ -48,25 +51,10 @@
                                 <img src="../images/footprint.svg" style="height: 30px; width: 30px" alt="Search Pet">Search Pet
                             </a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="../images/footprint.svg" style="height: 30px; width: 30px" alt="Found Pet">Found Pet List
+                        <li class="nav-item">
+                            <a class="nav-link" href="/founddoglist" id="navbarDropdown" role="button">
+                                Search Animal Type
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/founddoglist">Found Dog List</a>
-                                <a class="dropdown-item" href="/foundcatlist">Found Cat List</a>
-                                <a class="dropdown-item" href="/foundotheranimalslist">Found Other Animals List</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="../images/footprint.svg" style="height: 30px; width: 30px" alt="Lost Pet">Lost Pet List
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/lostdoglist">Lost Dog List</a>
-                                <a class="dropdown-item" href="/lostcatlist">Lost Cat List</a>
-                                <a class="dropdown-item" href="/lostotheranimalslist">Lost Other Animals List</a>
-                            </div>
                         </li>
                     </ul>
 
@@ -84,36 +72,26 @@
             
         <div class="container content">
             <br>
-            <h1 class="display-6">FOUND DOG LIST</h1>
+            <h1 class="display-6">Search By Animal Type</h1>
             <br>
+<!-- links to grab the list associated with pet type -->
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/founddoglist">Dog</a>
+                    <a id="foundDogs" class="nav-link active" href="/founddoglist">Dog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cat</a>
+                    <a id="foundCat" class="nav-link" href="/founddoglist">Cat</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Other Pets</a>
+                    <a id="foundOtherPets" class="nav-link" href="/founddoglist">Other Pets</a>
                 </li>
+                <li class="nav-item">
+                        <a id="refresh" class="nav-link" href="/founddoglist">Refresh List</a>
+                    </li>
             </ul>
             <br>
+<!-- all api responses get loaded here      -->
             <div class="wrapper" style="color: darkolivegreen" id="found-dog-wrapper">
-                <div class="card" id="found-dog-card">
-                    <img class="card-img-top" src="https://www.cesarsway.com/sites/newcesarsway/files/styles/large_article_preview/public/7-reasons-to-adopt-a-senior-dog.jpg?itok=Am5sHPzb" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title" id="found-dog-name">No name</h5>
-                        <p class="card-text" id="found-dog-info">
-                            Found dog, Labrador Retriever mix, male, young 1-2 years old, no microchip, no collar, medium 26-60 lbs, golden long hair, found at Walnut Creek Park.
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted" id="found-dog-time">Last updated 3 mins ago</small>
-                        <button type="submit" class="btn btn-primary w3-right" id="found-dog-contact">
-                            <img src="../images/heart.svg" style="height: 20px; width: 20px" alt="involve">
-                        </button>
-                    </div>
-                </div>
             </div>
             <br>            
             <br><br>
@@ -124,7 +102,7 @@
         </footer>  
 
     </div>
-
+    <script type="text/javascript" src="../js/foundPetList.js"></script>
 </body>
 
 </html>

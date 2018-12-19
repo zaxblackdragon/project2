@@ -52,12 +52,45 @@ module.exports = function(app) {
       });
     }
   });
-
+// get all pets
   app.get("/api/allpets", isAuthenticated, function (req, res) {
     db.Pet.findAll({}).then(function(results){
       res.json(results);
     });
   });
+
+  // get dogs only
+  app.post("/api/alldogs", function (req, res) {
+    db.Pet.findAll({
+      where: {
+        petType: "Dog"
+      }
+    }).then(function(results){
+      res.json(results);
+      console.log(results);
+    });
+  });
+   // get cats only
+   app.post("/api/allcats", function (req, res) {
+    db.Pet.findAll({
+      where: {
+        petType: "Cat"
+      }
+    }).then(function(results){
+      res.json(results);
+    });
+  });
+  // gets other animals only
+  app.post("/api/allotheranimals", function (req, res) {
+    db.Pet.findAll({
+      where: {
+        petType: "Other animals"
+      }
+    }).then(function(results){
+      res.json(results);
+    });
+  });
+  //search route
   app.post("/api/search", isAuthenticated, function (req, res) {
     db.Pet.findAll({
       where: req.body
@@ -66,8 +99,8 @@ module.exports = function(app) {
     });
   });
   // working on the post and getting an error startitng the server - var Pet = sequelize.define("pet", is not a function
-  app.post("/api/registerpet", isAuthenticated, function(req, res) {
-    console.log(req.body);
+  app.post("/api/registerpet", /*isAuthenticated,*/ function(req, res) {
+  
     // Take the request...
     var pet = req.body;
 
@@ -89,7 +122,8 @@ module.exports = function(app) {
       special: pet.special,
       photolink: pet.photolink
 
-    }).then(function(){
+    }).then(function(result){
+      console.log(result);
       res.status(204).end();
     });
 

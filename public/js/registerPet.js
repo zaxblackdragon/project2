@@ -97,7 +97,6 @@ $(document).ready(function() {
         return;
       }
 
-
       $.post("/api/registerpet", dataObj, function(res){
         $("#search-pet-name").val("");
         $("#register-age").val("Age?");
